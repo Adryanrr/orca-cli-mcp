@@ -5,6 +5,7 @@
 **Let any MCP-capable AI agent drive [Orca](https://github.com/stablyai/orca): spin up worktrees, launch Claude or Codex, read and answer their terminals, and track the work.**
 
 [![CI](https://github.com/Adryanrr/orca-cli-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Adryanrr/orca-cli-mcp/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/orca-cli-mcp.svg)](https://www.npmjs.com/package/orca-cli-mcp)
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Node >= 20](https://img.shields.io/badge/node-%3E%3D20-339933.svg)
 ![MCP](https://img.shields.io/badge/MCP-stdio-8A2BE2.svg)
@@ -61,12 +62,12 @@ It is a thin, auditable layer (~600 lines) over the **official `orca` CLI**. It 
 
 ## Quick start
 
-No npm publish needed: `npx` can install straight from GitHub. It builds once on install.
+Run it with `npx`, no install step needed. To track the latest commit instead of the npm release, use `github:Adryanrr/orca-cli-mcp` in place of `orca-cli-mcp`.
 
 ### Claude Code
 
 ```bash
-claude mcp add orca -- npx -y github:Adryanrr/orca-cli-mcp
+claude mcp add orca -- npx -y orca-cli-mcp
 ```
 
 ### Claude Desktop / Cursor
@@ -78,7 +79,7 @@ Add this to `claude_desktop_config.json` (Claude Desktop) or `.cursor/mcp.json` 
   "mcpServers": {
     "orca": {
       "command": "npx",
-      "args": ["-y", "github:Adryanrr/orca-cli-mcp"]
+      "args": ["-y", "orca-cli-mcp"]
     }
   }
 }
@@ -90,12 +91,12 @@ Add this to `claude_desktop_config.json` (Claude Desktop) or `.cursor/mcp.json` 
 # ~/.codex/config.toml
 [mcp_servers.orca]
 command = "npx"
-args = ["-y", "github:Adryanrr/orca-cli-mcp"]
+args = ["-y", "orca-cli-mcp"]
 ```
 
 ### OpenBot
 
-Add a **stdio** server in *Server settings → MCP*, with command `npx` and arguments `-y github:Adryanrr/orca-cli-mcp`. Every agent on the server gets the tools.
+Add a **stdio** server in *Server settings → MCP*, with command `npx` and arguments `-y orca-cli-mcp`. Every agent on the server gets the tools.
 
 ### From source
 

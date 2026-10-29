@@ -5,6 +5,7 @@
 **Deixe qualquer agente de IA compatível com MCP controlar o [Orca](https://github.com/stablyai/orca): criar worktrees, lançar Claude ou Codex, ler e responder os terminais deles e acompanhar o trabalho.**
 
 [![CI](https://github.com/Adryanrr/orca-cli-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Adryanrr/orca-cli-mcp/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/orca-cli-mcp.svg)](https://www.npmjs.com/package/orca-cli-mcp)
 ![Licença: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Node >= 20](https://img.shields.io/badge/node-%3E%3D20-339933.svg)
 ![MCP](https://img.shields.io/badge/MCP-stdio-8A2BE2.svg)
@@ -61,12 +62,12 @@ flowchart LR
 
 ## Começo rápido
 
-Não precisa de pacote no npm: o `npx` instala direto do GitHub e compila uma vez na instalação.
+Rode com `npx`, sem passo de instalação. Para usar o último commit em vez da versão do npm, troque `orca-cli-mcp` por `github:Adryanrr/orca-cli-mcp`.
 
 ### Claude Code
 
 ```bash
-claude mcp add orca -- npx -y github:Adryanrr/orca-cli-mcp
+claude mcp add orca -- npx -y orca-cli-mcp
 ```
 
 ### Claude Desktop / Cursor
@@ -78,7 +79,7 @@ Adicione em `claude_desktop_config.json` (Claude Desktop) ou em `.cursor/mcp.jso
   "mcpServers": {
     "orca": {
       "command": "npx",
-      "args": ["-y", "github:Adryanrr/orca-cli-mcp"]
+      "args": ["-y", "orca-cli-mcp"]
     }
   }
 }
@@ -90,12 +91,12 @@ Adicione em `claude_desktop_config.json` (Claude Desktop) ou em `.cursor/mcp.jso
 # ~/.codex/config.toml
 [mcp_servers.orca]
 command = "npx"
-args = ["-y", "github:Adryanrr/orca-cli-mcp"]
+args = ["-y", "orca-cli-mcp"]
 ```
 
 ### OpenBot
 
-Em *Server settings → MCP*, adicione um servidor **stdio** com o comando `npx` e os argumentos `-y github:Adryanrr/orca-cli-mcp`. Todos os agentes do servidor recebem as ferramentas.
+Em *Server settings → MCP*, adicione um servidor **stdio** com o comando `npx` e os argumentos `-y orca-cli-mcp`. Todos os agentes do servidor recebem as ferramentas.
 
 ### A partir do código
 
