@@ -1,0 +1,56 @@
+{
+  "name": "orca-cli-mcp",
+  "version": "0.1.0",
+  "description": "MCP server that lets AI agents drive Orca (worktrees, coding agents, terminals) through the official orca CLI",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "orca",
+    "ai-agents",
+    "claude",
+    "codex",
+    "worktree",
+    "git-worktree"
+  ],
+  "license": "MIT",
+  "author": "Adryanrr (https://github.com/Adryanrr)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adryanrr/orca-cli-mcp.git"
+  },
+  "homepage": "https://github.com/Adryanrr/orca-cli-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/Adryanrr/orca-cli-mcp/issues"
+  },
+  "type": "module",
+  "bin": {
+    "orca-cli-mcp": "dist/server.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "README.pt-BR.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepare": "npm run build",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@vitest/coverage-v8": "^5.0.5",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  }
+}
